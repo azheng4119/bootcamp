@@ -206,9 +206,9 @@ let object1 = {
     b: 42,
     c: false
   };
-Object.myKeys = function(){
+Object.myKeys = function(cb){
     listofkeys = [];
-    for (let x in this){
+    for (let x in cb){
         listofkeys.push(x);
     }
     return listofkeys;
@@ -222,15 +222,16 @@ let myKeys = function(obj) {
     return listofkeys;
 }
 
+//tesing object.keys
+// console.log(Object.myKeys(object1));
+// console.log(myKeys(object1));
 
-console.log(object1.myKeys);
-console.log(myKeys(object1));
 //Objects.values
 
-Object.myValues = function(){
+Object.myValues = function(cb){
     listofValues = [];
-    for (let x in this){
-        listofkeys.push(this[x]);
+    for (let x in cb){
+        listofValues.push(cb[x]);
     }
     return listofValues;
 }
@@ -242,6 +243,8 @@ let myValues = function(obj){
     }
     return listofValues;
 }
-//console.log(myValues(object1));
 
+//testing object.myvalues
+// console.log(myValues(object1));
+// console.log(Object.myValues(object1));
 
