@@ -201,7 +201,20 @@ let myLastIndexOf = (arr,cb) => {
 // console.log(myLastIndexOf([1,2,3,4,1],1));
 
 //Object.keys
-let getKeys = function(obj) {
+let object1 = {
+    a: 'somestring',
+    b: 42,
+    c: false
+  };
+Object.myKeys = function(){
+    listofkeys = [];
+    for (let x in this){
+        listofkeys.push(x);
+    }
+    return listofkeys;
+}
+
+let myKeys = function(obj) {
     listofkeys = [];
     for (let x in obj){
         listofkeys.push(x);
@@ -209,22 +222,26 @@ let getKeys = function(obj) {
     return listofkeys;
 }
 
-let object1 = {
-    a: 'somestring',
-    b: 42,
-    c: false
-  };
 
-console.log(getKeys(object1));
-
+console.log(object1.myKeys);
+console.log(myKeys(object1));
 //Objects.values
-let getValues = function(obj){
+
+Object.myValues = function(){
+    listofValues = [];
+    for (let x in this){
+        listofkeys.push(this[x]);
+    }
+    return listofValues;
+}
+
+let myValues = function(obj){
     listofValues = [];
     for (let x in obj){
         listofValues.push(obj[x]);
     }
     return listofValues;
 }
-console.log(getValues(object1));
+//console.log(myValues(object1));
 
 
