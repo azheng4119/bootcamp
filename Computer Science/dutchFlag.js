@@ -14,5 +14,28 @@ let dutchFlag = (arr,pivot) =>{
     return lessThan.concat(equal,greaterThan);
 }
 
+let swapFunc = (arr,index1,index2) =>{
+    let temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] =  temp;
+}
+
+let dutchFlag2 = (arr,pivot) =>{
+    let start = 0;
+    let end = arr.length-1;
+    for (let i = 0; i <= end;i++){
+        if (arr[i] > pivot){
+            swapFunc(arr,i,end);
+            end--;
+        }
+        if(arr[i] < pivot){
+            swapFunc(arr,i,start)
+            start++;
+        }
+    }
+    return arr;
+    
+}
 let arr = [7, 6, 5, 4, 4, 4, 3, 2, 1];
-console.log(dutchFlag(arr,4));
+let arr2 = [0, 1, 2, 3, 4, 5, 6];
+console.log(dutchFlag2(arr,5));
