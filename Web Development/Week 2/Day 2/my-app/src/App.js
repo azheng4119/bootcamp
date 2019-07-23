@@ -3,22 +3,18 @@ import logo from './logo.svg';
 import './App.css';
 import FormEdit from './FormEdit';
 import FolderContent from './FolderContent';
+import Tickers from './components/Tickers.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <FormEdit first = "Andy" last = "Zheng"/>
-        <FolderContent/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div id = "apps">
+          <FormEdit first = "Andy" last = "Zheng"/>
+          <FolderContent/> <br></br>
+        </div>
+        <Tickers />
       </header>
     </div>
   );
