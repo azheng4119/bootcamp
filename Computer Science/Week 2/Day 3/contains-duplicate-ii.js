@@ -1,12 +1,8 @@
 let duplicates = (arr,k) =>{
     let hash = {};
-    let x = 0;
-    for (let i of nums){
-        if (i in hash){
-            if (Math.abs(hash[i]-x) <= k) return true;
-        }
-        hash[i] = x;
-        x++;
+    for (let i = 0; i < nums.length; i++){
+        if (Math.abs(hash[nums[i]]-i) <= k) return true;
+        hash[nums[i]] = i;
     }
     return false;
 }
