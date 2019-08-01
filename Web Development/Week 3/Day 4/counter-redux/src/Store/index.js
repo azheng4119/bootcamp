@@ -6,7 +6,7 @@
 
 
 //Imports
-//combineReducers: it takes in all of your reducer functions and puts the output of those reducer functions as the values for the coressponding keys in your reduc store
+//combineReducers: it takes in all of your reducer functions and puts the output of those reducer functions as the values for the coressponding keys in your redux store
 //applyMiddleware: 
 //createStore: this establishes your redux store that holds your appplication states
 //createLogger: it allows you to see in your browser console the action that was just dispatched, the previous state prior to the action being dispatched, and the next state after the action was dispatched;
@@ -20,3 +20,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 const rootReducer = combineReducers(/*pass in reducers here */);
 const logger = createLogger({collapsed : true});
 const middleware = composeWithDevTools(applyMiddleware(thunkMiddleware,logger));
+const store = createStore(rootReducer,middleware);
+
+
+export default store;
