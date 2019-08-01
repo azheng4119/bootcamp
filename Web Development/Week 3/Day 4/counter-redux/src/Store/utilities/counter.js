@@ -12,16 +12,16 @@ const increment = () => {
 }
 
 const decrement = () => {
-    return  {
+    return {
         type: DECREMENT
     }
 }
 
 export default (state = 0, action) => {
-    switch (action.type){
-        case INCREMENT: 
+    switch (action.type) {
+        case INCREMENT:
             return state + 1;
-        case DECREMENT: 
+        case DECREMENT:
             return state - 1;
         default:
             return state;
