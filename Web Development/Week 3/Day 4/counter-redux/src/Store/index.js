@@ -18,7 +18,7 @@ import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import counter from './utilities/counter';
 
-const rootReducer = combineReducers(counter);
+const rootReducer = combineReducers({counter});
 const logger = createLogger({ collapsed: true });
 const middleware = composeWithDevTools(applyMiddleware(thunkMiddleware, logger));
 const store = createStore(rootReducer, middleware);

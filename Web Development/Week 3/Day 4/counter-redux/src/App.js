@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import AppView from "./AppView";
 import './App.css';
+import { connect } from "react-redux";
+import { decrement, increment } from './Store/utilities/counter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class AppContainer extends React.Component {
+  render() {
+    return (
+      <AppView counter={this.props.counter} incrementCounter={this.props.incrementCounter} decrementCounter={this.props.decrementCounter}></AppView>
+    )
+  }
 }
 
-export default App;
+const mapState = (state) => {
+  return {
+    counter: state.counter
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+    incrementCounter: () => dispatch(increment()),
+    decrementCounter: () => dispatch(decrement())
+  }
+}
+
+export default connect(mapState, mapDispatch)(AppContainer);
