@@ -10,6 +10,6 @@ function difference(arr1,arr2){
         }
     }
     return Object.keys(hash).filter(item =>hash[item] == 1);
-}
+} 
 
 module.exports = difference;
