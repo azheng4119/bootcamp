@@ -21,4 +21,5 @@ public:
         string idString = to_string(root->val);
         idString += uniqueId(root->left) + uniqueId(root->right);
         return idString;
-    } 
+    }
+}
